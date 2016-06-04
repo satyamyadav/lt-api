@@ -21,7 +21,7 @@ module.exports = {
     }
   },
   server: {
-    port: 3030,
+    port: process.env.PORT || 3030,
     uploadsDir: path('/storage/uploads'),
     publicDir: path('/public')
   },
@@ -47,7 +47,7 @@ module.exports = {
   orm: {
     cacheEnabled: true,
 
-    development: {
+    production: {
       db: {
         client: 'postgresql',
         connection: {
@@ -67,12 +67,14 @@ module.exports = {
       },
       // redis config is optional, is used for caching by tabel
       redis: {
-        host: '0.0.0.0',
-        port: '6379',
-        keyPrefix: 'dev.api.'
+        host: 'pub-redis-15073.us-east-1-4.3.ec2.garantiadata.com',
+        port: '15073',
+        keyPrefix: 'dev.api.',
+        password: 'scrietredis'
+
       }
     },
-    production: {
+    development: {
       db: {
         client: 'postgresql',
         connection: {
