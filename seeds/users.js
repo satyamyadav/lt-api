@@ -7,7 +7,7 @@ var range = appRequire('util/range');
 var db = appRequire('orm').table;
 
 module.exports = function() {
-  //return db('users').truncate().then(function() {
+  return db('users').truncate().then(function() {
     return Promise.all(range(1, 10).map(function(n) {
       var password = faker.internet.password();
       return db('users').insert({
@@ -29,5 +29,5 @@ module.exports = function() {
         picture: 'https://s3.amazonaws.com/uifaces/faces/twitter/kimcool/128.jpg'
       });
     }));
-  //});
+  });
 };
