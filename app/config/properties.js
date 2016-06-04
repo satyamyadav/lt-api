@@ -51,11 +51,13 @@ module.exports = {
       db: {
         client: 'postgresql',
         connection: {
-          database: 'lt_dev',
-          host: "localhost",
+          database: 'dccdf5460marrs',
+          host: "ec2-23-21-219-12.compute-1.amazonaws.com",
           port: 5432,
-          user: 'lt_dev',
-          password: 'lt_dev'
+          user: 'hclirtnhbtlgrh',
+          password: 'ZZnuGNBSU0mPmPKDx2Zx0GZcI_',
+          ssl: true
+
         },
         pool: {
           min: 2,
