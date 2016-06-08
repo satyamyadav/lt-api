@@ -47,15 +47,15 @@ module.exports = {
   orm: {
     cacheEnabled: true,
 
-    development: {
+    production: {
       db: {
         client: 'postgresql',
         connection: {
-          database: 'dccdf5460marrs',
-          host: "ec2-23-21-219-12.compute-1.amazonaws.com",
+          database: 'lt_dev',
+          host: "localhost",
           port: 5432,
-          user: 'hclirtnhbtlgrh',
-          password: 'ZZnuGNBSU0mPmPKDx2Zx0GZcI_',
+          user: 'lt_dev',
+          password: 'lt_dev',
           ssl: true
 
         },
@@ -67,14 +67,12 @@ module.exports = {
       },
       // redis config is optional, is used for caching by tabel
       redis: {
-        host: 'pub-redis-15073.us-east-1-4.3.ec2.garantiadata.com',
-        port: '15073',
-        keyPrefix: 'dev.api.',
-        password: 'scrietredis'
-
+        host: '0.0.0.0',
+        port: '6379',
+        keyPrefix: 'dev.api.'
       }
     },
-    production: {
+    development: {
       db: {
         client: 'postgresql',
         connection: {
@@ -98,7 +96,7 @@ module.exports = {
       }
     }
   },
-  
+
   auth: {
     development: {
 
