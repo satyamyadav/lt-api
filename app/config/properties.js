@@ -33,9 +33,13 @@ module.exports = {
       dbCachePrefix: '_div.cache'
     },
     production: {
-      host: 'localhost',
-      port: '6379',
-      dbCachePrefix: '_div.cache'
+      // host: 'localhost',
+      // port: '6379',
+      // dbCachePrefix: '_div.cache'
+      host: 'pub-redis-15073.us-east-1-4.3.ec2.garantiadata.com',
+      port: '15073',
+      keyPrefix: 'ltapi.sess.',
+      password: 'scrietredis'
     },
     staging: {
       host: 'localhost',
@@ -98,7 +102,7 @@ module.exports = {
       }
     }
   },
-  
+
   auth: {
     development: {
 
