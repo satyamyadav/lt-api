@@ -33,13 +33,9 @@ module.exports = {
       dbCachePrefix: '_div.cache'
     },
     production: {
-      // host: 'localhost',
-      // port: '6379',
-      // dbCachePrefix: '_div.cache'
-      host: 'pub-redis-15073.us-east-1-4.3.ec2.garantiadata.com',
-      port: '15073',
-      keyPrefix: 'ltapi.sess.',
-      password: 'scrietredis'
+      host: 'localhost',
+      port: '6379',
+      dbCachePrefix: '_div.cache'
     },
     staging: {
       host: 'localhost',
@@ -71,10 +67,10 @@ module.exports = {
       },
       // redis config is optional, is used for caching by tabel
       redis: {
-        host: 'pub-redis-15073.us-east-1-4.3.ec2.garantiadata.com',
-        port: '15073',
-        keyPrefix: 'dev.api.',
-        password: 'scrietredis'
+        host: 'pub-redis-14851.us-east-1-4.6.ec2.redislabs.com',
+        port: '14851',
+        keyPrefix: 'lt.api.',
+        password: 'learnlt'
 
       }
     },
