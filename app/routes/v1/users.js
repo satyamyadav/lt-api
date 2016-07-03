@@ -50,7 +50,7 @@ app.post('/follow/:id', authFilter, function (req, res) {
                       res.status(500).send({
                           msg: 'Something went wrong, contact a dev'
                       });
-                  });  
+                  });
             }
         });
 
@@ -105,7 +105,7 @@ app.get('/profile/social/:username', userExists, function (req, res) {
     }
 
     Promise.props({
-            
+
         projects: q.eagerLoad('user', 'upvotes', 'comments').whereIn('user_id', req.resolved.user.id).all(),
         data: req.resolved.user
 
@@ -135,14 +135,13 @@ app.get('/profile/:id', function (req, res) {
 });
 
 
-
 app.get('/', (req, res) => {
   //console.log('user in /users>>>', req.user);
   var orderBy = req.query.orderBy ? req.query.orderBy : 'id';
   var page = req.query.page ? req.query.page : 1;
   var page = req.query.page ? req.query.page : 1;
   var q = table('users');
-  
+
   if(req.query.page && req.query.offset) {
       q.forPage(req.query.page, req.query.offset);
   }
@@ -151,7 +150,7 @@ app.get('/', (req, res) => {
       q.forPage(req.query.page, req.query.per_page);
   }
   q.orderBy(orderBy, 'desc');
-  
+
   q.eagerLoad(['followers']).all()
   .then((users) => {
     res.view('users/list', users);
@@ -175,4 +174,3 @@ app.get('/:id', function(req, res) {
     res.send(err);
   });
 });
-
