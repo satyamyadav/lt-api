@@ -68,10 +68,9 @@ module.exports = {
       },
       // redis config is optional, is used for caching by tabel
       redis: {
-        host: 'pub-redis-14851.us-east-1-4.6.ec2.redislabs.com',
-        port: '14851',
-        keyPrefix: 'lt.api.',
-        password: 'learnlt'
+        host: '0.0.0.0',
+        port: '6379',
+        keyPrefix: 'dev.api.'
 
       }
     },
