@@ -36,6 +36,7 @@ module.exports = {
       host: 'localhost',
       port: '6379',
       dbCachePrefix: '_div.cache'
+
     },
     staging: {
       host: 'localhost',
@@ -51,11 +52,11 @@ module.exports = {
       db: {
         client: 'postgresql',
         connection: {
-          database: 'dccdf5460marrs',
-          host: "ec2-23-21-219-12.compute-1.amazonaws.com",
+          database: 'lt_dev',
+          host: "localhost",
           port: 5432,
-          user: 'hclirtnhbtlgrh',
-          password: 'ZZnuGNBSU0mPmPKDx2Zx0GZcI_',
+          user: 'lt_dev',
+          password: 'lt_dev',
           ssl: true
 
         },
