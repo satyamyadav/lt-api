@@ -69,7 +69,7 @@ var auth = module.exports = function() {
           // Store hash in your password table.
           return table('users').find("email", email).then(function(user) {
             if (user) {
-              return done(null, null, "User already exist, Please Login");
+              return done('user already exists', null);
             } else {
               //console.log('in auth saving', req.body);
               var data = {};
